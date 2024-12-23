@@ -1,4 +1,5 @@
-ultralytics
+opencv-python-headless
 scikit-image
 streamlit
 numpy
+ultralytics

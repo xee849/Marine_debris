@@ -20,7 +20,7 @@ def detect_pol(image):
 def main():
     st.image("22223.png",use_container_width=True)
     st.header("Orignal Image and Detected Image")
-    st.sidebar.title("PLASTIC POLLUTION DETECTION APP")
+    st.sidebar.title("POLLUTION DETECTION")
     image = st.sidebar.file_uploader("Upload an Image",type=['jpg','png','jpeg'])
     if image:
         img,cl = detect_pol(image)

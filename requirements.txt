@@ -2,4 +2,3 @@ ultralytics
 scikit-image
 streamlit
 numpy
-io

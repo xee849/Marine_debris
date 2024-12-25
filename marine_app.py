@@ -18,17 +18,18 @@ def detect_pol(image):
     return anotated_img,polcc
     
 def main():
-    st.image("22223.png",use_container_width=True)
-    st.header(":blue[POLLUTION DETECTION]",divider=True)
-    st.sidebar.title("POLLUTION DETECTION")
+    st.header(":blue[MARINE POLLUTION DETECTION]",divider=True)
+    st.sidebar.image("sublime.png",use_container_width=True)
     image = st.sidebar.file_uploader("Upload an Image",type=['jpg','png','jpeg'])
     if image:
         img,cl = detect_pol(image)
-        col1,col2 = st.columns(2)
+        col1,col2 = st.columns(2,border=True)
         with col1:
-            st.image(image,caption="Orignal Image",use_container_width=True,output_format="auto",channels="RGB")
+            st.subheader("Orignal Image")
+            st.image(image,use_container_width=True,output_format="auto",channels="RGB")
         with col2:
-            st.image(img,caption="Detected Image",use_container_width=True,output_format="auto",channels="RGB")
+            st.subheader("Detected Image")
+            st.image(img,use_container_width=True,output_format="auto",channels="RGB")
         objectname = list(cl.keys())
         objectcount = list(cl.values())
         st.dataframe({"OBJECTS NAME":objectname,"OBJECTS COUNT":objectcount},use_container_width=True)
